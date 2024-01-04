@@ -1,5 +1,13 @@
 #!/usr/bin/env python
+"""
+Given a URL, the UrlToPDF class generates a PDF that is true to the display properties of the page.
+Generates a chromium test instance and executes the built-in print-to-file functionality.
 
+The provided use case generates a pdf for each of the 25 chapters of the book, 'Critically Conscious
+Computing', which is available at https://criticallyconsciouscomputing.org.
+
+Modified from the work of Nikita Tonkoshkur at https://github.com/bloodwithmilk25.
+"""
 import base64
 import json
 import logging
@@ -17,7 +25,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 class UrlToPDF:
     """
-     Simple use case:
+    Example use case:
         pdf_file = UrlToPDF(['https://google.com']).toPDF()
         with open('new_pdf.pdf', "wb") as outfile:
             outfile.write(pdf_file[0].getbuffer())
